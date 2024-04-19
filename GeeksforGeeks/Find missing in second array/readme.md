@@ -7,7 +7,7 @@ Given two integer arrays a of size n and b of size m, the task is to find the nu
 Input: 
 
 `
-n = 6, m = 5
+n = 6, m = 5 <br />
 a[] = {1, 2, 3, 4, 5, 10}
 b[] = {2, 3, 1, 0, 5}
 `
