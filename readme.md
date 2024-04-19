@@ -1,1 +1,1 @@
-# Daily HackerRank Challenge
+# Daily Coding Challenge
