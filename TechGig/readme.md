@@ -18,7 +18,7 @@ Print 'Hello Techgig' and then content of the variable on another line.
 `I am coming back to the race.`
 
 ### Output
-`Hello Techgig <br>
+`Hello Techgig \n
 I am coming back to the race.`
 
 ## Explanation
