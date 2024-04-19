@@ -18,8 +18,8 @@ Print 'Hello Techgig' and then content of the variable on another line.
 `I am coming back to the race.`
 
 ### Output
-`Hello Techgig`
-`I am coming back to the race.`
+`Hello Techgig <br>
+I am coming back to the race.`
 
 ## Explanation
 For the first Line, we are printing the string literal 'Hello Techgig'. On another line, we are printing the content of the variable. To pass all the test cases, you need to print all the content of the variable to stdout.
