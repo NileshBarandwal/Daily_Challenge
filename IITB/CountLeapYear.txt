@@ -1,0 +1,59 @@
+/******************************************************************************
+
+Question 3: (8 marks)
+
+Leap years are an interesting way of putting together lost time over the previous 4 years. 
+These are those years when February has 29 days. One of your friends Raj was born on 29th of February. 
+He wishes to know how many times till date he lived through his actual birthday (29th February). 
+Take his birth year and present year as inputs and print the number of times he has experienced 29th of February. 
+Note if present year is a leap year, do include its 29th of February as well. 
+You may also display an error as “Birth Year is incorrect” if the birth year entered is not a leap year.
+
+Note: Leap years are years which are multiples of 4 with the exception of years which are divisble by 100 but not by 400.
+
+Sample input 1:
+1996 2019
+
+Sample output 1:
+6
+
+Sample input 2:
+1997 2019
+
+Sample output 2:
+Birth year is incorrect
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int birthyear,till;
+    int count=0;
+    
+    cin>>birthyear>>till;
+    
+    if((birthyear%4)==0)
+    {
+        for(birthyear;birthyear<till; birthyear++)
+        {
+            if((birthyear%4)==0)
+            {
+                count++;
+            }
+        }
+        cout<<count;
+    }
+    else if(till<birthyear){
+        cout<<"Current year is less then birth year";
+    }
+    else{
+        
+        cout<<"Birth Year is incorrect";
+    }
+    
+    return 0;
+}
