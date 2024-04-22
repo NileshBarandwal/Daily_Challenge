@@ -2,6 +2,9 @@
 
 ## Programming Assignments
 
+
+### Q1) SumOfProductsOfAllPair.cpp
+```
 Q1) For this problem, you will be given n numbers a1, a2, a3, .., an . Write a C++
 program to print the sum of the product of all pairs a_i , a_j where i < j (8 Marks)
 
@@ -20,3 +23,35 @@ Sample Output :
 85
 Explanation:
 1*2 + 1*3 + 1*4 + 1*5 + 2*3 + 2*4 + 2*5 + 3*4 + 3*5 + 4*5
+```
+
+### Q2) longestAlternatingRun.cpp
+```
+Q2) Input a positive decimal number n. Find the maximum run length of a number when
+represented in its binary form. A maximum run length in a binary number is defined as maximal
+consecutive alternating ones and zeroes. (8 Marks)
+For example, 100110101 has runs { 10, 01, 10101 } counting from left to right.
+Input format : Input a single number n ( <=10^8 ) in decimal format.
+Output format : Output the length of the longest run in the binary representation of n .
+
+Sample Input 1: 309
+Sample Output 1: 5
+
+Explanation: The binary representation is: 100110101 . The longest consecutive alternating
+sequence of 1’s and 0’s is 10101 .
+
+Sample Input 2: 554
+Sample Output 2: 7
+
+Explanation: The binary representation is: 1000101010 . The longest consecutive alternating
+sequence of 1’s and 0’s is 0101010 .
+
+Practice/Visible test cases
+
+Input Output
+
+963 2
+465 4
+661 6
+```
+
