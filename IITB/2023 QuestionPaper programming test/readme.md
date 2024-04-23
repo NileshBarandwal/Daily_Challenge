@@ -55,3 +55,55 @@ Input Output
 661 6
 ```
 
+### Q3) Phone Price
+
+```
+Q3) A new phone is priced at some price, P. Every year, the phone undergoes a sudden price drop given by the formula: priceDrop = (current_price - 12000) 2 / 20000 .
+
+Write a recursive function price() to calculate the price for every year. Accept the number of
+years, n , and price, P as input in the main, and pass them to the function. 
+
+Calculate the price after n years, and return the result back to the main. (8 Marks)
+
+Sample input: 1 20000
+Sample output: 16800
+
+Sample input: 3 20000
+Sample output: 14892.6
+
+Template code, in red, should be made visible to the students.
+
+#include <iostream>
+using namespace std;
+int price(int years, int current_price) {
+//Write your code below this line
+return price(years, current_price);
+}
+int main() {
+int years, current_price;
+cin >> years >> current_price;
+cout << price(years, current_price) << endl;
+return 0;
+}
+
+
+Practice/Visible test cases
+
+Input:
+3 14750
+Output:
+13873
+
+Input:
+6
+15000
+Output:
+13493
+
+Input:
+9
+22500
+Output:
+13503
+```
+
