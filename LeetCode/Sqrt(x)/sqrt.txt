@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+     if (x == 0) return 0; // Base case for 0
+        double x0 = x / 2.0;  // Initial guess
+        double x1 = 0;        // To hold the new guess
+        const double tolerance = 0.0001; // Tolerance for convergence
+
+        // Loop until convergence
+        do {
+            x1 = 0.5 * (x0 + x / x0); // New guess using Babylonian Method
+            if (abs(x1 - x0) < tolerance) {
+                break; // Convergence achieved
+            }
+            x0 = x1; // Update the guess for the next iteration
+        } while (true);
+
+        return static_cast<int>(x1); // Return the integer square root
+    }
+};
