@@ -107,3 +107,42 @@ Output:
 13503
 ```
 
+### Q4) 2D Array - Sum of Neighbors
+```
+Q4) Consider a 2D-array with dimensions m*n . We will use the notation arr[i][j] to refer to
+the element at the i th
+
+row and j th column of the array arr . For a positive input number k ,
+perform the following simulation k times: (12 Marks)
+Simulation : For each element at i and j , replace arr[i][j] by sum of its neighbors divided
+by the number of neighbors (integer division). Two elements arr[i][j] and arr[i’][j’]
+are neighbours if |i - i’| + |j - j’| = 1 .
+Note that the corner element will have only two neighbors and the non-corner elements on the
+border will have only 3 neighbors.
+Input format: The first line consists of 3 integers m, n, k . The next lines contain m x n
+integers in row-major order .
+The output should be just one line containing m x n elements also in row-major order.
+Hint: You will have to use two 2D arrays.
+E.g.
+3 3 2 (3x3 is m and n, and k=2)
+1 2 3
+4 5 6
+7 8 9
+After the first simulation:
+3 3 4
+4 5 5
+6 7 7
+After the second iteration:
+3 4 4
+4 4 5
+5 6 6
+So, output is: 3 4 4 4 4 5 5 6 6
+Sample Input:
+3 3 2
+1 2 3
+4 5 6
+7 8 9
+Sample Output
+3 4 4 4 4 5 5 6 6
+```
+
