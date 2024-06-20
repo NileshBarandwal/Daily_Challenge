@@ -1,0 +1,48 @@
+// 1552. Magnetic Force Between Two Balls
+
+class Solution {
+public:
+    int maxDistance(vector<int>& position, int m) {
+        sort(position.begin(), position.end());
+        int start = 0;
+        int end = position.size()-1;
+        // m even then position array size even
+        // m odd then position array size off
+        // first and last always occupied
+        if(m == 2){
+            return abs(position[start] - position[end]);
+        }
+        
+// Binary search for the maximum minimum force
+        int left = 1;
+        int right = position.back() - position[0];
+        int result = 0;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            // Check if we can place m balls with at least `mid` distance apart
+            int count = 1;
+            int lastPosition = position[0];
+
+            for (int i = 1; i < position.size(); ++i) {
+                if (position[i] - lastPosition >= mid) {
+                    count++;
+                    lastPosition = position[i];
+                    if (count == m) {
+                        break;
+                    }
+                }
+            }
+
+            if (count >= m) {
+                result = mid;
+                left = mid + 1;  // Try for a larger minimum distance
+            } else {
+                right = mid - 1;  // Try for a smaller minimum distance
+            }
+        }
+
+        return result;
+    }
+};
