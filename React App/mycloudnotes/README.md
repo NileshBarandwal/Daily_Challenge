@@ -1,3 +1,0 @@
-## My Cloud Notes
-
-- Frontend
