@@ -1,0 +1,58 @@
+// 726. Number of Atoms
+
+class Solution {
+public:
+    string countOfAtoms(string formula) {
+        stack<unordered_map<string, int>> stk;
+        stk.push(unordered_map<string, int>());
+        int n = formula.size();
+        
+        for (int i = 0; i < n; ) {
+            if (formula[i] == '(') {
+                stk.push(unordered_map<string, int>());
+                i++;
+            } else if (formula[i] == ')') {
+                auto top = stk.top();
+                stk.pop();
+                i++;
+                int count = 0;
+                while (i < n && isdigit(formula[i])) {
+                    count = count * 10 + formula[i] - '0';
+                    i++;
+                }
+                if (count == 0) count = 1;
+                for (auto &p : top) {
+                    stk.top()[p.first] += p.second * count;
+                }
+            } else {
+                int start = i++;
+                while (i < n && islower(formula[i])) i++;
+                string name = formula.substr(start, i - start);
+                int count = 0;
+                while (i < n && isdigit(formula[i])) {
+                    count = count * 10 + formula[i] - '0';
+                    i++;
+                }
+                if (count == 0) count = 1;
+                stk.top()[name] += count;
+            }
+        }
+        
+        unordered_map<string, int> final_count;
+        while (!stk.empty()) {
+            for (const auto &p : stk.top()) {
+                final_count[p.first] += p.second;
+            }
+            stk.pop();
+        }
+        
+        map<string, int> sorted_final_count(final_count.begin(), final_count.end());
+        string result;
+        for (const auto &p : sorted_final_count) {
+            result += p.first;
+            if (p.second > 1) result += to_string(p.second);
+        }
+        
+        return result;
+    }
+};
