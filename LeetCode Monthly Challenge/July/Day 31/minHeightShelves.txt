@@ -1,0 +1,22 @@
+// 1105. Filling Bookcase Shelves
+
+class Solution {
+public:
+    int minHeightShelves(vector<vector<int>>& books, int shelfWidth) {
+        int n = books.size();
+        vector<int> dp(n + 1, INT_MAX); // dp[i] represents the min height of the bookshelf with first i books
+        dp[0] = 0; // No books, no height
+
+        for (int i = 1; i <= n; ++i) {
+            int width = 0, height = 0;
+            for (int j = i; j > 0; --j) {
+                width += books[j - 1][0];
+                if (width > shelfWidth) break; // If width exceeds, break the loop
+                height = std::max(height, books[j - 1][1]); // Update the height of the current shelf
+                dp[i] = std::min(dp[i], dp[j - 1] + height); // Update the dp value for dp[i]
+            }
+        }
+
+        return dp[n];
+    }
+};
